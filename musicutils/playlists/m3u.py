@@ -11,7 +11,6 @@ class m3u(object):
     def MakeSong(self, m3u_line, file_name):
         tokens = m3u_line.split(',')
         artist, title = tokens[-1].split('-')
-        print artist, title
         return song.Song(title.strip(),artist.strip(),file_name=file_name)
     
     def _parse_file(self, file_name):
