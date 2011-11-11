@@ -8,7 +8,7 @@ class m3u(object):
         self.songs = []
         self._parse_file(file_name)        
     
-    def MakeSong(self, m3u_line, file_name):
+    def make_song(self, m3u_line, file_name):
         tokens = m3u_line.split(',')
         artist, title = tokens[-1].split('-')
         return song.Song(title.strip(),artist.strip(),file_name=file_name)
@@ -24,7 +24,7 @@ class m3u(object):
                 
             """
             if split_lines[x]:
-                self.songs.append( self.MakeSong(split_lines[x], split_lines[x+1]))
+                self.songs.append( self.make_song(split_lines[x], split_lines[x+1]))
     
 
 
